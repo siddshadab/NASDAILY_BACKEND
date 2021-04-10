@@ -4,7 +4,8 @@
   "description": "Nas Daily Assessment(Dream Startup)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -13,10 +14,18 @@
   "keywords": [
     "Shadab"
   ],
-  "author": "Shadab siddiqui",
+  "author": "Shadab siddiqui <siddShadab7@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/siddshadab/NASDAILY_BACKEND/issues"
   },
-  "homepage": "https://github.com/siddshadab/NASDAILY_BACKEND#readme"
+  "homepage": "https://github.com/siddshadab/NASDAILY_BACKEND#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.24.0",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0"
+  }
 }
