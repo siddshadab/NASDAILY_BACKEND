@@ -1,0 +1,22 @@
+{
+  "name": "nasdaily_backend",
+  "version": "1.0.0",
+  "description": "Nas Daily Assessment(Dream Startup)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddshadab/NASDAILY_BACKEND.git"
+  },
+  "keywords": [
+    "Shadab"
+  ],
+  "author": "Shadab siddiqui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siddshadab/NASDAILY_BACKEND/issues"
+  },
+  "homepage": "https://github.com/siddshadab/NASDAILY_BACKEND#readme"
+}
