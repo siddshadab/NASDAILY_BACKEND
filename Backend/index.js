@@ -9,7 +9,7 @@ var customCacheRateLimiter = require("./helpers/customCacheRateLimiter.js");
 var errorHandler = require("./helpers/errorHandler.js");
 var config = require("./config");
 var logger = require("./helpers/logger.js");
-
+var car_parkin_system = require("./routes/car_parkin_system")
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -21,8 +21,8 @@ app.use(customCacheRateLimiter);
 
 
 
-var car_parkin_system = require("./routes/car_parkin_system")
-app.use("/api/nasdaily", car_parkin_system)
+
+app.use("/api/v1/car_parking_system", car_parkin_system)
 
 
 app.get("/", function(req, res){

@@ -15,6 +15,8 @@ const config = {
     //NOOFSLOT:loadEnvVariable('NOOFSLOT') || 10,
     PORT: process.env.PORT || 8080,
     NOOFSLOT:process.env.NOOFSLOT || 10,
+    THROTTLINGCOUNTINSEC:process.env.THROTTLINGCOUNTINSEC || 10,
+    THROTTLINGCOUNTPERSEC:process.env.THROTTLINGCOUNTPERSEC || 10,
   },   
 };
 

@@ -1,13 +1,10 @@
 var moment = require("moment");
 var cache = require('../cache_plugin_custom/cache_custom.js')();
+var config = require("../config");
 
 
-
-const WINDOW_SIZE_IN_SECONDS = 10;
-const MAX_WINDOW_REQUEST_COUNT = 10;
-const WINDOW_LOG_INTERVAL_IN_SECONDS = 10;
-
-
+const WINDOW_SIZE_IN_SECONDS = config.APP.THROTTLINGCOUNTINSEC;
+const MAX_WINDOW_REQUEST_COUNT = config.APP.THROTTLINGCOUNTPERSEC;
 
 
 const customCacheRateLimiter = (req, res, next) => {
