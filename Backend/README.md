@@ -22,6 +22,7 @@ Data:
 ● Checkout car
 ● Throttling of 10 second (Which is implemented by own)
 
+
 APIs
 
 /api/v1/car_parking_system    api having three method access [get,post,delete]
