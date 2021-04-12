@@ -1,4 +1,4 @@
-#How to use this repository
+ #How to use this repository
 
 Install all dependencies  "npm install"
 
@@ -22,13 +22,11 @@ Data:
 ● Checkout car
 ● Throttling of 10 second (Which is implemented by own)
 
-
 APIs
-
-/api/v1/car_parking_system    api having three method access [get,post,delete]
-get api  /api/v1/car_parking_system   (?registratonNo=123 Or ?slot=123 ) (?registratonNo=123 And ?slot=123 )        - 
-Post api  /api/v1/car_parking_system   req.body.registratonNo         - 
-delete api  /api/v1/car_parking_system   req.body.slot
+● /api/v1/car_parking_system    api having three method access [get,post,delete]
+● get api  /api/v1/car_parking_system   (?registratonNo=123 Or ?slot=123 ) (?registratonNo=123 And ?slot=123 )        - 
+● Post api  /api/v1/car_parking_system   req.body.registratonNo         - 
+● delete api  /api/v1/car_parking_system   req.body.slot
 
 Throttling is based on evn on seconds bases, default is 10 seconds  
 
