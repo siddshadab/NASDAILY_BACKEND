@@ -9,12 +9,12 @@ exports.getDummyRequest = function(req,res){
 exports.parCar = async function(req,res){
     //IN case if slots is not initialize on server startup
     if (Constant.MAXSIZE === 0) {
-        res.send(`parking lot is not initiated`);
+      res.json({code: 500, error_message: `parking lot is not initiated`});        
       } else if (Constant.MAXSIZE === Constant.CAR.length) {
           //IF parking lot is full return this message 
-          res.send(`Please Connect with Support Team as Parking Lot seems to be Full`);
+          res.json({code: 202, error_message: `Please Connect with Support Team as Parking Lot seems to be Full`});                  
       }else if(req.body.registratonNo===undefined){
-        res.send(`Please Add Registartion Number before requesting`);
+        res.json({code: 406, error_message: `Please Add Registartion Number before requesting`});                
       }
       
       
@@ -23,7 +23,7 @@ exports.parCar = async function(req,res){
      //  if (carrObject.isPresent===true) {
         if (carrObject===true) {
            //IF parking lot is full return this message 
-           res.send(`Car Already present in parking Slot: ${carrObject.slot}`);
+           res.json({code: 200, error_message: `Car Already present in parking Slot: ${carrObject.slot}`});           
       } else {
         let slot = Constant.AVAILABLESLOT[0];
         Constant.CAR.push({
@@ -31,7 +31,7 @@ exports.parCar = async function(req,res){
           'registratonNo': req.body.registratonNo,          
         });       
         Constant.AVAILABLESLOT.shift();
-        res.send(`Allocated slot number: ${slot}`)
+        res.json({code: 200, error_message: `Allocated slot number: ${slot}`});        
       }
 }
 
@@ -39,20 +39,19 @@ exports.unParCar = async function(req,res){
     slot = parseInt(req.body.slot);
     //IN case if slots is not initialize on server startup
     if (Constant.MAXSIZE === 0) {
-        res.send("parking lot is not initiated");
+      res.json({code: 500, error_message: `parking lot is not initiated`});        
     } else if (Constant.CAR.length > 0) {  
       if (await utils.search(slot, 'slot', Constant.CAR)) {  
         Car = await utils.remove(slot, 'slot', Constant.CAR);  
         // Push SLot NOW After car gets removed  
         Constant.AVAILABLESLOT.push(slot);
         Constant.AVAILABLESLOT.sort();
-        res.send(`Slot  numbmer ${slot} is free`);  
+        res.json({code: 200, error_message: `Slot  numbmer ${slot} is free`});                  
       } else {
-        res.send(` Slot ${slot} is already  empty `);
-      }
-  
+        res.json({code: 200, error_message: `Slot ${slot} is already  empty`});                
+      }  
     } else {
-        res.send(`Parking lot is empty`)
+      res.json({code: 200, error_message: `Parking lot is empty`});                
     }
 }
 
@@ -66,7 +65,7 @@ exports.getCarDetailsOnParams = function(req,res){
         registratonNo = req.query.registratonNo;       
         //IN case if slots is not initialize on server startup
         if (Constant.MAXSIZE === 0) {
-            res.send("parking lot is not initiated");
+          res.json({code: 500, error_message: `parking lot is not initiated`});              
           } else if (Constant.CAR.length > 0) {
         let resultSet;
         Constant.CAR.forEach(function (row) {
@@ -88,7 +87,7 @@ exports.getCarDetailsOnParams = function(req,res){
           }
         });
         if (resultSet === undefined) return `Not found`
-        res.send(resultSet);
+        res.json({code: 200, error_message: resultSet});          
       } else {
         res.send(`Not found`)
       }

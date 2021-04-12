@@ -1,10 +1,11 @@
 
 class Constant {    
 
-    constructor(CAR,MAXSIZE,AVAILABLESLOT) {      
+    constructor(CAR,MAXSIZE,AVAILABLESLOT,CACHE) {      
       this.CAR = CAR; 
       this.MAXSIZE = MAXSIZE; 
       this.AVAILABLESLOT = AVAILABLESLOT; 
+      this.CACHE = CACHE;
     } 
 
     //TODO Dont call Var directly use it from functions later (Now using it dirctly from memory leakage)
